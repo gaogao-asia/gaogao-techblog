@@ -6,7 +6,7 @@ module.exports = {
       summary: `A startup studio based in Southeast Asia and Japan (HQ is in Singapore). Our company is focusing on software development for MVP. We have 30+ Japanese software engineers having excellent skills on startup early phase.`,
     },
     description: `GAOGAOのTech Blog`,
-    siteUrl: `https://gaogao-techblog.netlify.app/`,
+    siteUrl: `https://tech.gaogao.asia/`,
     social: {
       twitter: `gaogaoasia`,
     },
