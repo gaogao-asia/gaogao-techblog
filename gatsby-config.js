@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `GAOGAO Tech Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `GAOGAO`,
+      summary: `A startup studio based in Southeast Asia and Japan (HQ is in Singapore). Our company is focusing on software development for MVP. We have 30+ Japanese software engineers having excellent skills on startup early phase.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `GAOGAOのTech Blog`,
+    siteUrl: `https://gaogao-techblog.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `gaogaoasia`,
     },
   },
   plugins: [
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `GAOGAO Tech Blog`,
+        short_name: `GAOGAOTechBlog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -79,5 +79,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify-cms`
   ],
 }
