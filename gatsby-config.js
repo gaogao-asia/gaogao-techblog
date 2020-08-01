@@ -3,7 +3,7 @@ module.exports = {
     title: `GAOGAO Tech Blog`,
     author: {
       name: `GAOGAO`,
-      summary: `A startup studio based in Southeast Asia and Japan (HQ is in Singapore). Our company is focusing on software development for MVP. We have 30+ Japanese software engineers having excellent skills on startup early phase.`,
+      summary: `東南アジア初のスタートアップスタジオGAOGAOの0→1開発特化の技術ブログ`,
     },
     description: `GAOGAOのTech Blog`,
     siteUrl: `https://tech.gaogao.asia/`,
