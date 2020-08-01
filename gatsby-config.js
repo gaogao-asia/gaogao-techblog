@@ -194,7 +194,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID
+        trackingId: `UA-107745192-2`
       }
     },
     {
@@ -269,6 +269,7 @@ module.exports = {
       options: {
         include: /svg-icons/
       }
-    }
+    },
+    `gatsby-plugin-netlify-cms`
   ]
 };

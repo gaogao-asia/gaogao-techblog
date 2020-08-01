@@ -2,8 +2,8 @@ backend:
   name: github
   repo: gaogao-asia/gaogao-techblog
 
-media_folder: content/assets
-public_folder: ../assets
+media_folder: ./
+public_folder: ./
 
 collections:
   - name: blog

@@ -2,4 +2,4 @@
 title: author
 ---
 
-**Mr. Gatsby** Proin ornare ligula eu tellus tempus elementum. Aenean [bibendum](/) iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus.
+**[GAOGAO](https://gaogao.asia)** は日本、バンコク、シンガポール（本社）にて登記し、東南アジアやUSをメインに40名以上の開発メンバーが参画し、スタートアップ起業家や新規事業部のお客様の0→1開発を支援しています。「世界にチャレンジしたい」、「0→1を経験したい」という同じ志を持った仲間と一緒に、新たなチャレンジを支援します。エンジニア絶賛募集中!
