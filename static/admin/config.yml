@@ -8,11 +8,13 @@ public_folder: ../assets
 collections:
   - name: blog
     label: Blog
-    folder: content/blog
+    folder: content/posts
     create: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: description, label: Description }
+      - { name: category, label: Category }
+      - { name: cover, label: Cover }
+      - { name: author, label: Author }
       - { name: body, label: Body, widget: markdown }
