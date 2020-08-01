@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `GAOGAO Tech Blog`,
+    title: `GAOGAO技術ブログ`,
     author: {
       name: `GAOGAO`,
-      summary: `東南アジア初のスタートアップスタジオGAOGAOの0→1開発特化の技術ブログ`,
+      summary: `東南アジア発のスタートアップスタジオGAOGAO在籍の0→1開発のプロフェッショナルエンジニア・デザイナーが知見を共有していきます。`,
     },
-    description: `GAOGAOのTech Blog`,
+    description: `東南アジア発のスタートアップスタジオGAOGAO在籍の0→1開発のプロフェッショナルエンジニア・デザイナーが知見を共有していきます。`,
     siteUrl: `https://tech.gaogao.asia/`,
     social: {
       twitter: `gaogaoasia`,
@@ -66,7 +66,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
