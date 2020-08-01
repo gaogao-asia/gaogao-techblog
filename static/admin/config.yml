@@ -2,19 +2,21 @@ backend:
   name: github
   repo: gaogao-asia/gaogao-techblog
 
-media_folder: ./
-public_folder: ./
+media_folder: content/assets
+public_folder: ../assets
 
 collections:
-  - name: blog
-    label: Blog
+  - name: posts
+    label: Posts
+    label_singular: 'Post'
     folder: content/posts
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
     create: true
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: category, label: Category }
-      - { name: cover, label: Cover }
-      - { name: author, label: Author }
+      - { name: cover, label: 'Cover Image', widget: 'image' }
       - { name: body, label: Body, widget: markdown }
