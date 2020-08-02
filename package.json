@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hero-blog",
+  "name": "gaogao-techblog",
   "version": "2.0.0",
-  "author": "Greg Lobinski <greglobinski@gmail.com>",
+  "author": "Takuya Tejima <tejitak@gaogao.asia>",
   "license": "MIT",
   "dependencies": {
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
