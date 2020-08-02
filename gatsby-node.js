@@ -152,19 +152,19 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
-  switch (stage) {
-    case `build-javascript`:
-      actions.setWebpackConfig({
-        plugins: [
-          // new BundleAnalyzerPlugin({
-          //   analyzerMode: "static",
-          //   reportFilename: "./report/treemap.html",
-          //   openAnalyzer: true,
-          //   logLevel: "error",
-          //   defaultSizes: "gzip"
-          // })
-        ]
-      });
-  }
-};
+// exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
+//   switch (stage) {
+//     case `build-javascript`:
+//       actions.setWebpackConfig({
+//         plugins: [
+//           new BundleAnalyzerPlugin({
+//             analyzerMode: "static",
+//             reportFilename: "./report/treemap.html",
+//             openAnalyzer: true,
+//             logLevel: "error",
+//             defaultSizes: "gzip"
+//           })
+//         ]
+//       });
+//   }
+// };
