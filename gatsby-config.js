@@ -21,14 +21,14 @@ const query = `{
   }
 }`;
 
-const queries = [
-  {
-    query
-    // transformer: ({ data }) => {
-    //   return data.allMarkdownRemark.edges.reduce(transformer, []);
-    // }
-  }
-];
+// const queries = [
+//   {
+//     query,
+//     transformer: ({ data }) => {
+//       return data.allMarkdownRemark.edges.reduce(transformer, []);
+//     }
+//   }
+// ];
 
 module.exports = {
   // pathPrefix: config.pathPrefix,
