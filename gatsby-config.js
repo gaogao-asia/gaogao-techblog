@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const config = require("./content/meta/config");
 // const transformer = require("./src/utils/algolia");
 
@@ -269,7 +269,7 @@ module.exports = {
       options: {
         include: /svg-icons/
       }
-    },
+    }
     // `gatsby-plugin-netlify-cms`
   ]
 };
