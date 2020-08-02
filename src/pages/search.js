@@ -4,17 +4,24 @@ import { graphql } from "gatsby";
 require("core-js/fn/array/find");
 
 import Article from "../components/Article";
-import Search from "../components/Search";
+// import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 
 import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
 
 const SearchPage = props => {
+  // const {
+  //   data: {
+  //     site: {
+  //       siteMetadata: { algolia, facebook }
+  //     }
+  //   }
+  // } = props;
   const {
     data: {
       site: {
-        siteMetadata: { algolia, facebook }
+        siteMetadata: { facebook }
       }
     }
   } = props;
@@ -28,7 +35,7 @@ const SearchPage = props => {
               <AlgoliaIcon />
             </div>
 
-            <Search algolia={algolia} theme={theme} />
+            {/* <Search algolia={algolia} theme={theme} /> */}
           </Article>
         )}
       </ThemeContext.Consumer>
@@ -57,15 +64,26 @@ SearchPage.propTypes = {
 export default SearchPage;
 
 //eslint-disable-next-line no-undef
+// export const query = graphql`
+//   query SearchQuery {
+//     site {
+//       siteMetadata {
+//         algolia {
+//           appId
+//           searchOnlyApiKey
+//           indexName
+//         }
+//         facebook {
+//           appId
+//         }
+//       }
+//     }
+//   }
+// `;
 export const query = graphql`
   query SearchQuery {
     site {
       siteMetadata {
-        algolia {
-          appId
-          searchOnlyApiKey
-          indexName
-        }
         facebook {
           appId
         }
