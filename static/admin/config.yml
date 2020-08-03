@@ -9,12 +9,13 @@ collections:
     label: Posts
     label_singular: 'Post'
     folder: content/posts
-    slug: "{{year}}-{{month}}-{{day}}--{{title}}"
+    slug: "{{year}}-{{month}}-{{day}}--{{path}}"
     path: '{{slug}}/index'
     media_folder: ''
     public_folder: ''
     create: true
     fields:
+      - { name: path, label: 'URL Path' }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: category, label: Category }
