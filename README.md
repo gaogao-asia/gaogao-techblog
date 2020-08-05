@@ -1,4 +1,4 @@
-# Gatsby HeroBlog
+# GAOGAO Techblog
 This blog is based on [GatsbyJS](https://www.gatsbyjs.org/) with a blog theme [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog)
 
 ## Remarks
