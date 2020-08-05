@@ -26,7 +26,7 @@ You need to have an access previlege to this repository
 2. git clone this repository
 
 3. Add a post under a dir `content/posts`
-The folder name must be {yyyy}-{MM}-{dd}--{path}
+The folder name must be `{yyyy}-{MM}-{dd}--{path}` e.g. `content/posts/2020-08-03--test1`
 
 4. Create an `index.md` under the dir
 If you need a photos, please locate then under the post dir.
@@ -34,3 +34,7 @@ If you need a photos, please locate then under the post dir.
 5. Check on local website by `gatsby develop` with `http://localhost:8000/`
 
 6. `git commit` and `git push` to master branch
+
+## Performance Tips
+- https://blog.ojisan.io/gatsby-meet-netlify
+

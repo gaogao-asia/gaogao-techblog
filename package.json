@@ -43,6 +43,7 @@
     "js-yaml": "^3.12.0",
     "json-loader": "^0.5.7",
     "netlify-cms-app": "^2.12.19",
+    "netlify-plugin-gatsby-cache": "^0.3.2",
     "normalize.css": "^8.0.0",
     "postcss": "^7.0.0",
     "postcss-cli": "^5.0.1",
