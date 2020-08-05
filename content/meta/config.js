@@ -3,7 +3,7 @@ module.exports = {
   shortSiteTitle: "GAOGAO技術ブログ", // <title> ending for posts and pages
   siteDescription: "東南アジア発のスタートアップスタジオGAOGAOの0→1開発の知見共有ブログ",
   siteUrl: "https://tech.gaogao.asia",
-  // pathPrefix: "",
+  pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "ja",
 

@@ -31,7 +31,7 @@ const query = `{
 // ];
 
 module.exports = {
-  // pathPrefix: config.pathPrefix,
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,

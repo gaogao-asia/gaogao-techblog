@@ -9,10 +9,11 @@ const Seo = props => {
   const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
-
   const title = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle;
   const description = postDescription ? postDescription : config.siteDescription;
-  const image = postCover ? postCover : config.siteImage;
+  const image =
+    (postCover && postCover.childImageSharp && postCover.childImageSharp.resize.src) ||
+    config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
   return (
@@ -33,11 +34,13 @@ const Seo = props => {
       <meta property="og:type" content="website" />
       <meta property="fb:app_id" content={facebook.appId} />
       {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:creator"
         content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
       />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
     </Helmet>
   );
 };

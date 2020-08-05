@@ -18,6 +18,7 @@ collections:
       - { name: path, label: 'URL Path' }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
+      - { name: description, label: Description }
       - { name: category, label: Category }
       - { name: cover, label: 'Cover Image', widget: 'image' }
       - { name: author, label: Author }
