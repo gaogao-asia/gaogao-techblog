@@ -200,8 +200,9 @@ SSL設定も自動で行ってくれます。
 
 ### Performance Tips
 
-* キャッシュによるパフォーマンス改善Tips
-  [https://blog.ojisan.io/gatsby-meet-netlify](<* https://blog.ojisan.io/gatsby-meet-netlify>)
+* キャッシュによるパフォーマンス改善Tips\
+
+  <https://blog.ojisan.io/gatsby-meet-netlify>
 
   確かにビルドが速くなりました! [@sadnessOjisan](https://twitter.com/sadnessOjisan) ありがとうございます!
 
