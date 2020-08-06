@@ -19,8 +19,6 @@ GAOGAOでは現在お客様の数も20を超えて、参画しているエンジ
 
 ![](preview.jpg)
 
-
-
 # 技術選定は Gatsby + Netlify CMSに決定
 
 ブログのホスティングといえばまずはWordpressが思い浮かぶかと思いますが、最近はnotionやStudioなどノーコードに関連したサービスや、Hugo/Gatsby/Hexoに代表されるようなSSG(Static Site Generator)を活用したブログのホスティングも増えてきています。
@@ -32,6 +30,12 @@ GAOGAOでは現在お客様の数も20を超えて、参画しているエンジ
 * Static Site Generatorとして人気が高くテンプレートも多い
 * 見た目をJS/Reactでカスタマイズできる
 * Netlify CMSと連携することでマークダウンによる投稿を管理画面ベースで実現できる（裏で自動でgithubにcommitされるStaticファイルが生成される）
+
+
+
+結果、SSGセットアップしてこのサイトを使ってみると、サクサク動いて満足度高いブログが出来上がりました!
+
+
 
 ### gatsby-starter-hero-blog の利用
 
@@ -77,7 +81,9 @@ yarn add gatsby-plugin-netlify-cms netlify-cms-app
 `gatsby-plugin-netlify-cms`
 ```
 
-あとは後述するnetlifyとgithubを紐付ける設定を行うだけで
+あとは後述するnetlifyとgithubを紐付ける設定を行うだけでCMS上での投稿もしくはgitによるpushをトリガーに自動で反映してくれます。
+
+
 
 ### OGP周りの設定
 
