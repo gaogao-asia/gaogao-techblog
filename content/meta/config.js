@@ -1,7 +1,7 @@
 module.exports = {
-  siteTitle: "GAOGAO技術ブログ", // <title>
-  shortSiteTitle: "GAOGAO技術ブログ", // <title> ending for posts and pages
-  siteDescription: "東南アジア発のスタートアップスタジオGAOGAOの0→1開発の知見共有ブログ",
+  siteTitle: "ガオラボ", // <title>
+  shortSiteTitle: "ガオラボ", // <title> ending for posts and pages
+  siteDescription: "スタートアップスタジオGAOGAOの0→1開発情報メディア",
   siteUrl: "https://tech.gaogao.asia",
   pathPrefix: "",
   siteImage: "preview.jpg",
@@ -12,12 +12,12 @@ module.exports = {
   authorTwitterAccount: "gaogaoasia",
 
   /* info */
-  headerTitle: "GAOGAO技術ブログ",
-  headerSubTitle: "東南アジア発のスタートアップスタジオGAOGAOの0→1開発の知見共有ブログ",
+  headerTitle: "ガオラボ",
+  headerSubTitle: "スタートアップスタジオGAOGAOの0→1開発情報メディア",
 
   /* manifest.json */
-  manifestName: "GAOGAO技術ブログ",
-  manifestShortName: "GAOGAO技術ブログ", // max 12 characters
+  manifestName: "ガオラボ",
+  manifestShortName: "ガオラボ", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",
