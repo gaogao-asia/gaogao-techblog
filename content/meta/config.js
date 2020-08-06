@@ -1,7 +1,8 @@
 module.exports = {
-  siteTitle: "ガオラボ", // <title>
+  siteTitle: "ガオラボ - ものつくりをもっと楽しむための0→1開発情報メディア", // <title>
   shortSiteTitle: "ガオラボ", // <title> ending for posts and pages
-  siteDescription: "スタートアップスタジオGAOGAOの0→1開発情報メディア",
+  siteDescription:
+    "スタートアップスタジオGAOGAO運営のものつくりをもっと楽しむための0→1開発情報メディア",
   siteUrl: "https://tech.gaogao.asia",
   pathPrefix: "",
   siteImage: "preview.jpg",
