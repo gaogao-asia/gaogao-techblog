@@ -31,11 +31,7 @@ GAOGAOでは現在お客様の数も20を超えて、参画しているエンジ
 * 見た目をJS/Reactでカスタマイズできる
 * Netlify CMSと連携することでマークダウンによる投稿を管理画面ベースで実現できる（裏で自動でgithubにcommitされるStaticファイルが生成される）
 
-
-
 結果、SSGセットアップしてこのサイトを使ってみると、サクサク動いて満足度高いブログが出来上がりました!
-
-
 
 ### gatsby-starter-hero-blog の利用
 
@@ -56,7 +52,7 @@ npm install -g gatsby-cli
 ### gatsby newを実行
 
 ```sh
-gatsby new gaogao-techblog https://github.com/gatsbyjs/gatsby-starter-blog
+gatsby new gaogao-techblog https://github.com/greglobinski/gatsby-starter-hero-blog.git
 ```
 
 ### サイト情報更新
@@ -82,8 +78,6 @@ yarn add gatsby-plugin-netlify-cms netlify-cms-app
 ```
 
 あとは後述するnetlifyとgithubを紐付ける設定を行うだけでCMS上での投稿もしくはgitによるpushをトリガーに自動で反映してくれます。
-
-
 
 ### OGP周りの設定
 
