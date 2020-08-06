@@ -5,7 +5,7 @@ module.exports = {
     "スタートアップスタジオGAOGAO運営のものつくりをもっと楽しむための0→1開発情報メディア",
   siteUrl: "https://tech.gaogao.asia",
   pathPrefix: "",
-  siteImage: "preview.jpg",
+  siteImage: "/preview.jpg",
   siteLanguage: "ja",
 
   /* author */
