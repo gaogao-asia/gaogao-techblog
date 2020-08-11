@@ -32,6 +32,12 @@ const Bodytext = props => {
             line-height: ${theme.font.lineHeight.m};
           }
 
+          :global(h4) {
+            font-size: ${theme.font.size.s};
+            line-height: ${theme.font.lineHeight.xxl};
+            margin: 1em 0;
+          }
+
           :global(p) {
             font-size: ${theme.font.size.s};
             line-height: ${theme.font.lineHeight.xxl};
