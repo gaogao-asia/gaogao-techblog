@@ -1,7 +1,7 @@
 ---
 path: https://github.com/gaogao-asia
 date: 2020-08-10T08:47:18.077Z
-title: デザイナー視点でGAOGAOウェブサイトリニューアルを振り返る
+title: デザイナー視点でGAOGAOウェブサイトリニューアルを振り返る　- その１
 description: デザイナーに転身してから半年でウェブサイトをリニューアルした話でもある
 category: Web design
 cover: top.png
