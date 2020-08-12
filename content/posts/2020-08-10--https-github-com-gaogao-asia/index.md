@@ -1,5 +1,5 @@
 ---
-path: https://github.com/gaogao-asia
+path: website-renewal-1
 date: 2020-08-10T08:47:18.077Z
 title: デザイナー視点でGAOGAOウェブサイトリニューアルを振り返る　- その１
 description: デザイナーに転身してから半年でウェブサイトをリニューアルした話でもある
