@@ -103,3 +103,11 @@ Potfy.meの開発を通して、GitHubの集団開発における役割から、
 **開発者の募集機能**をつけ、開発アイデアに賛同する**他ユーザーと一緒に開発を始められるマッチング機能**等もつけていきたいと思います。
 
 Potfy.me は今後も継続して開発を続け、機能を拡張していきますので乞うご期待ください。
+
+## GAOGAOゲート
+
+[GAOGAOゲート](https://gaogao.asia/ja/gate/)はオリジナルアプリケーションを作成するプログラミング研修事業です。
+
+
+もしご興味ある方は是非[GAOGAOゲートHP](https://gaogao.asia/ja/gate/)、公式[Twitter](https://twitter.com/gaogaogate)にご連絡ください。
+
