@@ -273,7 +273,6 @@ return [
     ],
 
 ];
-
 ```
 
 137行目からの配列がアプリケーションに登録されるサービスプロバイダの一覧です。この中で176行目に\`App\Providers\RouteServiceProvider::class\`が定義されています。これがrouteを司るサービスプロバイダです。ファイルを見てみましょう。
@@ -333,7 +332,6 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 }
-
 ```
 
 Laravelの各サービスプロバイダのbootメソッドは、全てのサービスプロバイダを登録し終えた後に呼び出されます。したがって、このサービスプロバイダの \`$this->routes();\` のコールバック function に Route を渡してあげればOKです。以下のような感じ。
@@ -384,6 +382,8 @@ adminのパスが追加されています。アクセスすると、ちゃんと
 
 ![admin page](スクリーンショット-2020-11-05-16.37.11.png)
 
+ちなみにwebとは違うmiddleware群を設定したい場合は、 \`app/Http/Kernel.php\` の $middlewareGroups に新しくmiddleware群を定義してあげればOKです。adminページ全体にベーシック認証を掛けたい場合なんかに使えますね！
+
 ## 最後に
 
 弊社GAOGAOは現在副業含めて30名以上のエンジニアの方が参画し、グローバル（シンガポール、バンコク、ホーチミン、US、日本など）で15件以上お客様の開発のお手伝いをさせていただいております。
@@ -392,7 +392,7 @@ adminのパスが追加されています。アクセスすると、ちゃんと
 
 ## 参考
 
-[Laravel 8.x サービスプロバイダ](https://readouble.com/laravel/8.x/ja/providers.html)\
-[\[Laravel]ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)
+[Laravel 8.x サービスプロバイダ](https://readouble.com/laravel/8.x/ja/providers.html)
 
-[](https://qiita.com/tags/%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0)
+[\[Laravel]ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)\
+[Laravel本体の認証機能とは別にDB情報を使わないbasic認証を実装するサンプル](https://qiita.com/fumiyasac@github/items/cdf854008e7487148a67)[](https://qiita.com/tags/%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0)
