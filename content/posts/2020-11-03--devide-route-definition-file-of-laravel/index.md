@@ -16,11 +16,11 @@ Webアプリの開発を進めていくに従って、ページはどんどん�
 
 ## routes/web.phpを分割する
 
-APIのパスは \`routes/api.php\` に書くのが良いでしょう。今回のケースでは、ユーザーがアクセスするパスと管理画面用のパスとでroute定義ファイルを分けることを考えます。
+APIのパスは `routes/api.php` に書くのが良いでしょう。今回のケースでは、ユーザーがアクセスするパスと管理画面用のパスとでroute定義ファイルを分けることを考えます。
 
 ### 1. 管理画面用のroute定義ファイルを作成
 
-管理画面用のrouteだけを定義するファイルを作成します。ユーザーがアクセスするページ用のroute定義ファイルが \`web.php\` なので、ここでは \`webAdmin.php\` という名前でファイルを作成します。
+管理画面用のrouteだけを定義するファイルを作成します。ユーザーがアクセスするページ用のroute定義ファイルが `web.php` なので、ここでは `webAdmin.php` という名前でファイルを作成します。
 
 routes/webAdmin.php
 
@@ -36,7 +36,7 @@ Route::get('/', function () {
 
 ### 2. サービスプロバイダにroute定義ファイルを登録
 
-Laravel アプリケーションに route を登録するには、サービスプロバイダへの登録が必要になります。アプリケーションに登録されるサービスプロバイダは \`config/app.php\` に定義されていますから、このファイルを見てみましょう。
+Laravel アプリケーションに route を登録するには、サービスプロバイダへの登録が必要になります。アプリケーションに登録されるサービスプロバイダは `config/app.php` に定義されていますから、このファイルを見てみましょう。
 
 config/app.php
 
@@ -275,7 +275,7 @@ return [
 ];
 ```
 
-137行目からの配列がアプリケーションに登録されるサービスプロバイダの一覧です。この中で176行目に\`App\Providers\RouteServiceProvider::class\`が定義されています。これがrouteを司るサービスプロバイダです。ファイルを見てみましょう。
+137行目からの配列がアプリケーションに登録されるサービスプロバイダの一覧です。この中で176行目に`App\Providers\RouteServiceProvider::class` が定義されています。これがrouteを司るサービスプロバイダです。ファイルを見てみましょう。
 
 app/Providers/RouteServiceProvider.php 
 
@@ -334,7 +334,7 @@ class RouteServiceProvider extends ServiceProvider
 }
 ```
 
-Laravelの各サービスプロバイダのbootメソッドは、全てのサービスプロバイダを登録し終えた後に呼び出されます。したがって、このサービスプロバイダの \`$this->routes();\` のコールバック function に Route を渡してあげればOKです。以下のような感じ。
+Laravelの各サービスプロバイダのbootメソッドは、全てのサービスプロバイダを登録し終えた後に呼び出されます。したがって、このサービスプロバイダの `$this->routes();` のコールバック function に Route を渡してあげればOKです。以下のような感じ。
 
 app/Providers/RouteServiceProvider.php (bootメソッドのみ)
 
@@ -364,7 +364,7 @@ app/Providers/RouteServiceProvider.php (bootメソッドのみ)
     }
 ```
 
-middleware群は \`route/web.php\` に適用されるものと同じものを適用しつつ、新たに作成したroute定義ファイル(\`route/webAdmin.php\`)を読み込み、パスにプレフィックスとして\`admin\` を付けるよう設定を変更しました。試しにrouteを確認してみましょう。
+middleware群は `route/web.php` に適用されるものと同じものを適用しつつ、新たに作成したroute定義ファイル(`route/webAdmin.php`)を読み込み、パスにプレフィックスとして `admin` を付けるよう設定を変更しました。試しにrouteを確認してみましょう。
 
 ```shell
 $ php artisan route:list
@@ -382,7 +382,7 @@ adminのパスが追加されています。アクセスすると、ちゃんと
 
 ![admin page](スクリーンショット-2020-11-05-16.37.11.png)
 
-ちなみにwebとは違うmiddleware群を設定したい場合は、 \`app/Http/Kernel.php\` の $middlewareGroups に新しくmiddleware群を定義してあげればOKです。adminページ全体にベーシック認証を掛けたい場合なんかに使えますね！
+ちなみにwebとは違うmiddleware群を設定したい場合は、 `app/Http/Kernel.php` の `$middlewareGroups` に新しくmiddleware群を定義してあげればOKです。adminページ全体にベーシック認証を掛けたい場合なんかに使えますね！
 
 ## 最後に
 
@@ -394,5 +394,5 @@ adminのパスが追加されています。アクセスすると、ちゃんと
 
 [Laravel 8.x サービスプロバイダ](https://readouble.com/laravel/8.x/ja/providers.html)
 
-[\[Laravel]ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)\
+\[[Laravel]ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)\
 [Laravel本体の認証機能とは別にDB情報を使わないbasic認証を実装するサンプル](https://qiita.com/fumiyasac@github/items/cdf854008e7487148a67)[](https://qiita.com/tags/%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0)
