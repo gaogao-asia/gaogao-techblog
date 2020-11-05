@@ -393,5 +393,5 @@ adminのパスが追加されています。アクセスすると、ちゃんと
 ## 参考
 
 [Laravel 8.x サービスプロバイダ](https://readouble.com/laravel/8.x/ja/providers.html)\
-\[Laravel ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)\
+[Laravel ルーティングファイルを分割して管理する](https://qiita.com/hiro5963/items/5e533fe014f29f636a3d)\
 [Laravel本体の認証機能とは別にDB情報を使わないbasic認証を実装するサンプル](https://qiita.com/fumiyasac@github/items/cdf854008e7487148a67)[](https://qiita.com/tags/%e3%83%ab%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0)
