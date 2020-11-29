@@ -1,7 +1,7 @@
 ---
 path: create-and-update-enum-column
 date: 2020-12-01T12:00:00.930Z
-title: (MySQL×Laravel) ENUM型カラムを扱うなら、マイグレーションの面倒さを覚悟しようという話
+title: 【MySQL×Laravel】 ENUM型カラムを扱うなら、マイグレーションの面倒さを覚悟しようという話
 description:
 category: マイグレーション
 cover: enum.jpg
