@@ -9,14 +9,14 @@ author: kourin
 ---
 ![image](enum.jpg)
 
-こんにちは。 [GAOGAO](https://gaogao.asia/) に所属しております [@kourin](https://twitter.com/Kourin1996) と申します。宜しくお願いいたします。
+こんにちは、 [GAOGAO](https://gaogao.asia/) に所属している [@kourin](https://twitter.com/Kourin1996) と申します。宜しくお願いいたします。
 この記事では、Next.js のスナップショットテストについて説明します。
 
 ## まえがき
 
 [Next.js](https://nextjs.org/) は [React](https://reactjs.org/) 向けに サーバーサイドレンダリング (SSR) や 静的サイト生成(SSG) を可能にするフレームワークで、React を使ったWebアプリ開発プロジェクトで Next.js を使う機会が増えてきています。
 
-React, Next.js で開発をしていると、コンポーネントの修正時に意図していない別のページの内容まで変化してしまうことがあります。プロジェクトが大規模化するにつれて、共有コンポーネントが増えていき、コンポーネント修正時に変化する部分を補足することが難しくなります。このような場合にスナップショットテストが有効です。スナップショットテストでは、テスト実行時にコンポーネントを構築し、その中身が前回のテスト時と同じかどうかをチェックします。スナップショットテストを行うことで、コンポーネントを修正した際に、その修正がどのコンポーネントに影響を及ぼしているかを容易に確認することができます。
+React, Next.js で開発していると、コンポーネントの修正時に意図していない別のページの内容まで変化してしまうことがあります。プロジェクトが大規模化するにつれて、共有コンポーネントが増えていき、コンポーネント修正時に変化する部分を補足することが難しくなります。このような場合にスナップショットテストが有効です。スナップショットテストでは、テスト実行時にコンポーネントを構築し、その中身が前回のテスト時と同じかどうかをチェックします。スナップショットテストを行うことで、コンポーネントを修正した際に、その修正がどのコンポーネントに影響を及ぼしているかを容易に確認することができます。
 
 この記事では、Reactのテストで使われている [jest](https://jestjs.io/) や [React Testing Library](https://github.com/testing-library/react-testing-library) と、Next.js のページをテストで扱えるようにする [next-page-tester](https://github.com/toomuchdesign/next-page-tester) というライブラリを組み合わせることで、ページ単位でスナップショットテストを行う方法について解説します。
 
@@ -76,7 +76,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 <br/>
 
-`.babelrc` を `next-snapshot-test-sample` 直下に作り、以下を記述します。
+テスト環境で React,Next.js のコンポーネントや TypeScript のコードを動かすために、JavaScriptへのトランスパイラである [Babel](https://babeljs.io/) の設定をします。 `.babelrc` を `next-snapshot-test-sample` 直下に作り、以下を記述します。
 
 ```.babelrc
 {
@@ -219,11 +219,11 @@ next-page-tester は src/pages 以下にあるページコンポーネントを�
 
 next-page-tester を使う際は、`getPage` 関数を呼び出します。引数の `route` にはテストしたいページのパスを指定します。上のテストの場合は、パスが `/` のページである `src/pages/index.tsx` のテストを行っています。
 
-getPage 関数は `page` や `render` を返します。`page` はページのコンポーネントを返し、`render` は React Testing Library の render のようなもので、この関数を実行した後に、React Testing Libraryの `screen` などを使ってテストをすることができます。 
+getPage 関数は `page` や `render` を返します。`page` はページの Reactコンポーネントを返し、`render` は実行するとページの JSDOM を返します。
 
 <br />
 
-getServerSideProps で `fetch` を使って外部からデータを取得している場合には、エラーが発生しテストが失敗してしまうため、 `fetch-mock` を使って fetch 関数のモックを作ります。以下は fetch-mock を使ったテストコードのサンプルです。
+getServerSideProps 内で `fetch` を使って外部からデータを取得している場合には、テスト環境では fetch 関数が未定義で、エラーが発生しテストが失敗してしまいます。 そのため、 `fetch-mock` を使って fetch 関数のモックを作ります。以下は fetch-mock を使ったテストコードのサンプルです。
 
 ```ts
 import { getPage } from "next-page-tester";
@@ -267,7 +267,7 @@ export const getServerSideProps = async () => {
 export default Index;
 ```
 
-fetch-mock では、呼ぶURLとそのURLが返すデータを渡します。サンプルコードでは、テスト中に `http://sample.hoge` というURLで fetch が呼ばれた場合に `{"name":"sample"}` というデータを返すように設定します。このようにすることで、 getServerSideProps の中で `fetch('http://sample.hoge')` が呼ばれた場合は `{"name":"sample"}` というデータを得ることができます。
+fetch-mock では、URLとそのURLが返すデータを渡します。サンプルコードでは、テスト中に `http://sample.hoge` というURLで fetch が呼ばれた場合に `{"name":"sample"}` というデータを返すように設定します。このようにすることで、 getServerSideProps の中で `fetch('http://sample.hoge')` が呼ばれた場合は `{"name":"sample"}` というデータを得ることができます。
 
 
 ## next-page-tester を使ったページのスナップショットテスト
@@ -556,7 +556,7 @@ describe("album page", () => {
 また、`beforeAll` の中で fetch 関数のモックを設定し、 getServerSideProps で fetch が呼ばれた場合、URLに対応するダミーデータを返すように設定します。  
 
 `yarn test` を実行してみると、以下のような結果が得られます。  
-初回のスナップショットテストなので、テストは成功し `x snapshot written` と表示されます。スナップショットテストをすると、テストのファイルと同じ階層に `__snapshots__` ディレクトリが自動で作成されます。このディレクトリの中には、次回のスナップショットテストで使うスナップショットのデータが入っているため、gitなどのバージョン管理システムの監視対象として追加します。
+初回のスナップショットテストなので、テストは成功し `1 snapshot written` と表示されます。スナップショットテストをすると、テストのファイルと同じ階層に `__snapshots__` ディレクトリが自動で作成されます。このディレクトリの中には、次回のスナップショットテストで使うスナップショットのデータが入っているため、gitなどのバージョン管理システムの監視対象として追加します。
 
 ![image](album-page-snapshot-test-first.png)
 
@@ -612,6 +612,6 @@ jest, React Testing Libray, next-page-tester を組み合わせることで、 N
 
 ## 最後に
 
-弊社 GAOGAO は現在副業含めて30名以上のエンジニアの方が参画し、グローバル（シンガポール、バンコク、ホーチミン、US、日本など）で15件以上お客様の開発のお手伝いをさせていただいております。
+弊社 GAOGAO は現在副業含めて40名以上のエンジニアの方が参画し、グローバル（シンガポール、バンコク、US、日本など）で20社以上お客様の開発のお手伝いをさせていただいております。  
 
 もしグローバルにお仕事をしたいというエンジニアの方(デザイナーの方も)いましたら、お気軽に [@tejitak](https://twitter.com/tejitak) までご連絡いただければ幸いです。
