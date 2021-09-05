@@ -171,7 +171,7 @@ mysql> SELECT DISTINCT id FROM (SELECT users.id FROM users INNER JOIN posts ON u
 
 ### さらにサブクエリ化して UPDATE 文を実行
 
-```
+```sql
 mysql> UPDATE users SET status = 'posted' WHERE id IN (SELECT DISTINCT id FROM (SELECT users.id FROM users INNER JOIN posts ON users.id = posts.user_id WHERE posts.published_at IS NOT NULL) AS tmp_table);
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
