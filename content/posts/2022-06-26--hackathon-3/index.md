@@ -93,7 +93,7 @@ Daijuさんによる挨拶と開会コール。
 
 
 
-AチームはFigmaを用いてプロトタイプを作り、本開発はReact, Vite, Vercel, Github Actionsを用いて高速開発を行いました！
+AチームはFigmaを用いてプロトタイプを作り、本開発は`React`, `Vite`, `Vercel`, `Github Actions`を用いて高速開発を行いました！
 
 ![](screen-shot-2022-06-26-at-17.43.39.jpg)
 
