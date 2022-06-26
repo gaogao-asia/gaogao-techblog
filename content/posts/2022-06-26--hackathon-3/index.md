@@ -73,7 +73,7 @@ https://twitter.com/search?q=%23GAOGAO%E3%83%8F%E3%83%83%E3%82%AB%E3%82%BD%E3%83
 
 
 
-![](screen-shot-2022-06-26-at-17.27.30.jpg)
+![](スクリーンショット-2022-06-26-20.20.32.png)
 
 
 
