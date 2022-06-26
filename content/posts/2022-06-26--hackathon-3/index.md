@@ -1,9 +1,9 @@
 ---
-path: /hackathon/3
+path: hackathon-review-3
 date: 2022-06-26T02:25:00.601Z
 title: 第3回 GAOGAOハッカソン 体験記 (hanadev)
 description: GAOGAOハッカソンに参加してきました
-category: development
+category: イベント
 cover: screen-shot-2022-06-26-at-9.27.12.jpg
 author: hanadev
 ---
