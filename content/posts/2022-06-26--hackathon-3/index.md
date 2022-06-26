@@ -11,7 +11,7 @@ author: hanadev
 
 GAOGAO Slackにて、Daijuさんより以下のようなメッセージが流れてきました。
 
-```
+```tex
 ■日付
 日本時間6/26(日)11時〜20時
 
