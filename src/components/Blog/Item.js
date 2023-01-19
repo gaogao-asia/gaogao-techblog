@@ -172,7 +172,6 @@ const Item = props => {
         @from-width desktop {
           li {
             margin: ${`calc(${theme.space.default} * 4) 0 calc(${theme.space.default} * 5)`};
-            padding: 0 0 ${`calc(${theme.space.default} * 2)`};
 
             &::after {
               bottom: ${`calc(${theme.space.default} * -1.5)`};
@@ -200,6 +199,7 @@ const Item = props => {
             padding: ${`0 calc(${theme.space.default} * 2)`};
           }
           li {
+            width: 33%;
             &:hover {
               border: 1px solid ${theme.line.color};
               box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.03);

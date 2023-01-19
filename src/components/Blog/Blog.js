@@ -32,6 +32,8 @@ const Blog = props => {
           list-style: none;
           margin: 0 auto;
           padding: ${`calc(${theme.space.default} * 1.5) 0 calc(${theme.space.default} * 0.5)`};
+          display: flex;
+          flex-wrap: wrap;
         }
 
         @above tablet {
