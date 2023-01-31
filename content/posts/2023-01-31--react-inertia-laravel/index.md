@@ -55,8 +55,10 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 
 ### 前提
 
+*﻿ node v19.0.0
 * Laravel v9.48.0
-* React
+* React v18.2.0
+*﻿ react-dom v18.2.0
 * Inertia.js v1.0.0
 * Vite v4.0.4
 
