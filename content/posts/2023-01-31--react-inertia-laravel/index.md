@@ -92,7 +92,7 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 2. blade ファイルの変更
    `welcome.blade.php` を `app.blade.php` に変更し、中身を下記に書き換えましょう。
 
-```php
+```html
 <!DOCTYPE html>
 <html>
 
@@ -119,6 +119,10 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 Kernel.php の web グループに追加します。
 
 ```php
+<?php
+
+// 省略
+
 protected $middlewareGroups = [
   'web' => [
       \App\Http\Middleware\EncryptCookies::class,
@@ -190,6 +194,10 @@ export default defineConfig({
 1. Routing を Inertia を用いる形に書き換える
 
 ```php
+<?php
+
+// 省略
+
 // Route::get('/', function () {
 //   return view('welcome');
 // });　// deleted
@@ -222,6 +230,10 @@ Laravel のテンプレートエンジンである Blade に変数を受け渡�
 まずは web.php を変更し、新規作成した DashboardController に接続しましょう。
 
 ```php
+<?php
+
+// 省略
+
 // Route::inertia('/', 'Dashboard'); // Deleted
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index'); //Added
 ```
@@ -274,6 +286,10 @@ export default Dashboard;
 `store` メソッドで `to_route` を用いることで Task を新規作成した後に、Task/Index コンポーネントを再レンダリングすることが可能です。
 
 ```php
+<?php
+
+// 省略
+
 class TaskController extends Controller
 {
 
@@ -300,7 +316,7 @@ class TaskController extends Controller
 Inertia の `useForm` メソッドを用いて Form の操作を行います。
 また、`post` メソッドを用いることで、特定の URL にデータをポストし、ポスト成功時の操作も行うことが可能です。
 
-```js
+```javascript
 import { useForm } from "@inertiajs/react";
 import { FormControl, InputLabel, Input, Button } from "@mui/material";
 import TaskList from "../../Components/Tasks/TaskList";
