@@ -1,6 +1,6 @@
 ---
 path: react-inertia-laravel
-date: 2023-01-31T05:54:19.925Z
+date: 2023-02-01T05:54:19.925Z
 title: Inertia.js を用いた Laravel React SPA 開発のメリットデメリット。
 description: Inertia.js のバージョン 1.0.0 がリリースされました。今回は、Inertia.js を用いて Laravel
   React の SPA 開発をする際のメリットデメリット及び、セットアップ方法をまとめていきます。
