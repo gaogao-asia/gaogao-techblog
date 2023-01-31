@@ -262,3 +262,9 @@ export default Dashboard;
 ![dashboard props](dashboard-props.png)
 
 このようにして、Controller から Props を受け渡すことが可能です。
+
+
+## 4. まとめ
+
+今回は Inertia の導入のメリットデメリット及び、簡単な導入方法について見てまいりました。
+素早い開発速度で、SPA 開発をしたい場合に活用すると大きな力になるライブラリなのではないかと思いました。
