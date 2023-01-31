@@ -263,8 +263,94 @@ export default Dashboard;
 
 このようにして、Controller から Props を受け渡すことが可能です。
 
+## 4 簡易 Todo アプリ作成を通して、有用性を確認する
 
-## 4. まとめ
+ここからは詳細は省きますが、作成画面から入力した値を Todo 一覧として表示する機能をどのように実装するかポイントを見て行きましょう。
+
+### Controller でのポイント
+
+`index` メソッドでは、先ほどのように Props として DB から取得したタスクを全て Task/Index コンポーネントに渡すことができます。
+
+`store` メソッドで `to_route` を用いることで Task を新規作成した後に、Task/Index コンポーネントを再レンダリングすることが可能です。
+
+```php
+class TaskController extends Controller
+{
+
+    public function index()
+    {
+        $tasks = Task::all();
+        return Inertia::render('Tasks/Index', [
+            'tasks' => $tasks,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        Task::create($request->validate([
+            'name' => ['required', 'max:10'],
+          ]));
+          return to_route('tasks.index');
+    }
+```
+
+## Task 一覧画面 UI
+
+下記は Material UI を用いて簡単な Task 一覧画面とフォームを構築しています。
+Inertia の `useForm` メソッドを用いて Form の操作を行います。
+また、`post` メソッドを用いることで、特定の URL にデータをポストし、ポスト成功時の操作も行うことが可能です。
+
+```js
+import { useForm } from "@inertiajs/react";
+import { FormControl, InputLabel, Input, Button } from "@mui/material";
+import TaskList from "../../Components/Tasks/TaskList";
+import Layout from "../../Layouts/Layout";
+
+const Index = ({ tasks }) => {
+  const { data, setData, post, processing, errors, isDirty } = useForm({
+    name: ""
+  });
+
+  const submit = e => {
+    e.preventDefault();
+    post("/tasks", {
+      onSuccess: () => setData("name", "")
+    });
+  };
+  return (
+    <Layout>
+      <>
+        <h1>Tasks</h1>
+        <form onSubmit={submit}>
+          <FormControl>
+            <InputLabel htmlFor="task">Tasks</InputLabel>
+            <Input
+              id="task"
+              aria-describedby="task-name"
+              value={data.name}
+              onChange={e => setData("name", e.target.value)}
+            />
+            {errors.name && <div>{errors.name}</div>}
+            <Button variant="contained" type="submit" disabled={processing}>
+              Add
+            </Button>
+          </FormControl>
+        </form>
+        <TaskList tasks={tasks} />
+      </>
+    </Layout>
+  );
+};
+
+export default Index;
+```
+
+Layout コンポーネント等の実装は省きましたが、上記の実装をすることで下記のような SPA アプリケーションを作成することができます。
+API の構築などをせず、Blade テンプレートで実装しているイメージで SPA アプリケーションを実装することができました。
+
+![dashboard props](スクリーンショット-2023-01-31-13.29.16.png)
+
+## 5. まとめ
 
 今回は Inertia の導入のメリットデメリット及び、簡単な導入方法について見てまいりました。
 素早い開発速度で、SPA 開発をしたい場合に活用すると大きな力になるライブラリなのではないかと思いました。
