@@ -8,6 +8,13 @@ category: Inertia
 cover: スクリーンショット-2023-01-31-13.06.51.png
 author: T TSUBASA
 ---
+こんにちは。[GAOGAO](https://gaogao.asia/) に所属している [T Tsubasa](https://twitter.com/aburasobablog) と申します。
+
+今回は日本時間 2023 年 1 月 27 日に Version 1.0 がリリースされた [Inertia.js](https://inertiajs.com/) を触ってみた記事になります。
+
+直近の案件では、Laravel を API サーバー, と React をフロントエンド用いて開発した経験もあり、Inertia.js を利用するとどんなメリットがあるか、はたまたどんなデメリットがあるかをまとめていきます。
+公式ドキュメントでは Inertia と .js を省略した呼び方をしているため本記事でも以後は Inertia と呼称します。
+
 ## 1. はじめに
 
 ### Inertia.js とは
