@@ -8,16 +8,20 @@ cover: Screen_Shot_2021-09-05.png
 author: hideyoshi
 ---
 # 【MySQL】サブクエリを使ったUPDATEを実行する
+
 こんにちは。 [GAOGAO](https://gaogao.asia/) にてスタートアップスタジオのエンジニアをしております [@mass-min](https://twitter.com/masumi_sugae) と申します。
 GAOGAO では秀吉と呼ばれています。どうぞよろしくお願いいたします。
 
+![【MySQL】サブクエリを使ったUPDATEを実行する](Screen_Shot_2021-09-05.png "【MySQL】サブクエリを使ったUPDATEを実行する")
+
 ## 結論
+
 サブクエリで扱うテーブルは、 UPDATE 対象のテーブルとは別物扱いにする必要があります。
 
 更新対象テーブルと同一のテーブルに対してサブクエリを書きたい場合は、サブクエリでの取得結果に対してエイリアスを貼るようにしましょう。
 
-前提
----
+## 前提
+
 下記のようなテーブル構成になっているものとします。
 
 ![ER_image](er.png)
@@ -46,8 +50,8 @@ mysql> SELECT * FROM posts;
 3 rows in set (0.00 sec)
 ```
 
-サブクエリを用いた UPDATE の失敗
----
+## サブクエリを用いた UPDATE の失敗
+
 `users` テーブルは `status` の default 値が `registered` で、1つでも記事を公開する(`published_at` が null でない `posts` を1つ以上持つ)と以降 `status` は `posted` になる運用をしています。
 
 この UPDATE 処理を日次バッヂ処理で回すことを考えます。
@@ -108,8 +112,8 @@ mysql> UPDATE users
 ERROR 1093 (HY000): You can't specify target table 'users' for update in FROM clause
 ```
 
-エラー原因・解決方法
----
+## エラー原因・解決方法
+
 結論から言うと、以下のようにサブクエリ部分を書き換えることで解決できます。
 
 ```sql
@@ -131,7 +135,7 @@ WHERE
 
 MySQL では、同一テーブルの条件をサブクエリに入れることは出来ません。ドキュメントでも以下のように記述があります。
 
->You cannot update a table and select directly from the same table in a subquery. You can work around this by using a multi-table update in which one of the tables is derived from the table that you actually wish to update, and referring to the derived table using an alias.
+> You cannot update a table and select directly from the same table in a subquery. You can work around this by using a multi-table update in which one of the tables is derived from the table that you actually wish to update, and referring to the derived table using an alias.
 
 https://dev.mysql.com/doc/refman/5.6/en/update.html
 
@@ -144,6 +148,7 @@ https://dev.mysql.com/doc/refman/5.6/en/update.html
 各ステップの取得結果を確認してみましょう。
 
 ### id 取得用 SQL
+
 以下では取得対象のレコードの組み合わせを INNER JOIN でそのまま全て取得していますが、このステップの時点で DISTINCT の宣言をしても良いです。
 
 ```sql
@@ -190,10 +195,10 @@ mysql> SELECT * FROM users;
 これでアップデートができるようになりました。
 
 ## まとめ
+
 サブクエリで扱うテーブルは、 UPDATE 対象のテーブルとは別物扱いにする必要があります。
 
 更新対象テーブルと同一のテーブルに対してサブクエリを書きたい場合は、サブクエリでの取得結果に対してエイリアスを貼るようにしましょう。
-
 
 ## 最後に
 
@@ -204,6 +209,6 @@ mysql> SELECT * FROM users;
 
 世界中で「モノつくり」の連鎖を起こすことができる世界を実現するための仕組みを是非一緒に作っていきましょう！
 
-参考URL
----
+## 参考URL
+
 https://qiita.com/Kohei-Sato-1221/items/d1cbdc1d3affcd9c3a9e
