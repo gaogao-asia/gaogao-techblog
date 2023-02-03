@@ -8,6 +8,7 @@ category: Inertia
 cover: スクリーンショット-2023-01-31-13.06.51.png
 author: T TSUBASA
 ---
+
 こんにちは。[GAOGAO](https://gaogao.asia/) に所属している [T Tsubasa](https://twitter.com/aburasobablog) と申します。
 
 今回は日本時間 2023 年 1 月 27 日に Version 1.0 がリリースされた [Inertia.js](https://inertiajs.com/) を触ってみた記事になります。
@@ -25,9 +26,9 @@ author: T TSUBASA
 
 SPA 開発では、
 
-* バックエンドで API を開発
-* フロントエンドでルーティングを行う
-* バックエンドとフロントエンドの接続
+- バックエンドで API を開発
+- フロントエンドでルーティングを行う
+- バックエンドとフロントエンドの接続
 
 などのように、実装の複雑さがあります。
 
@@ -39,21 +40,21 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 
 ### メリット
 
-* SPA の開発がスムーズ
+- SPA の開発がスムーズ
   前述の通り、Laravel のテンプレートエンジン Blade を使用しているイメージで Controller から各 Component へ Props を渡すことが可能になっているため、
   気軽に SPA 開発を始めることが可能です。
-* Inertia の中には Sharing Data （多くのコンポーネントで参照したい Props）や Form helper などの便利なメソッドも用意されており、他のライブラリを追加せずに Basic な SPA を構築することが可能です。
-* Laravel のライブラリである Breeze との相性がよく、認証機能などを SPA でコマンドを叩くだけで容易に実装が可能。一方で、Breeze が JavaScript で構成されているため、TypeScript 化するのには手間がかかる。
+- Inertia の中には Sharing Data （多くのコンポーネントで参照したい Props）や Form helper などの便利なメソッドも用意されており、他のライブラリを追加せずに Basic な SPA を構築することが可能です。
+- Laravel のライブラリである Breeze との相性がよく、認証機能などを SPA でコマンドを叩くだけで容易に実装が可能。一方で、Breeze が JavaScript で構成されているため、TypeScript 化するのには手間がかかる。
 
 ### デメリット
 
-* 良くも悪くもバックエンドとフロントエンドを接着剤として結合するため、サービスの規模が大きくなりフロントエンドとバックエンドを分割したい際の移行コストがかかる。
+- 良くも悪くもバックエンドとフロントエンドを接着剤として結合するため、サービスの規模が大きくなりフロントエンドとバックエンドを分割したい際の移行コストがかかる。
 
 ### 結論
 
-* MVP 開発に際して、Blade ではなく SPA 開発で UX を向上させたいと考えた際に導入することを検討したいです。
-* 規模の大きいシステムや、開発チームが明確にフロント、バックと分割されている場合には API サーバーとフロントエンドで Repository ごと分割した方が良いと思いました。
-* 弊社では、0 → 1 の開発が多いため、Inertia を用いて高速に SPA 開発をする需要はあると感じました。
+- MVP 開発に際して、Blade ではなく SPA 開発で UX を向上させたいと考えた際に導入することを検討したいです。
+- 規模の大きいシステムや、開発チームが明確にフロント、バックと分割されている場合には API サーバーとフロントエンドで Repository ごと分割した方が良いと思いました。
+- 弊社では、0 → 1 の開発が多いため、Inertia を用いて高速に SPA 開発をする需要はあると感じました。
 
 ## 3. Laravel インストールから Inertia 導入方法。
 
@@ -62,16 +63,16 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 
 ### 前提
 
-* node v19.0.0
-* Laravel v9.48.0
-* React v18.2.0
-* react-dom v18.2.0
-* Inertia.js v1.0.0
-* Vite v4.0.4
+- node v19.0.0
+- Laravel v9.48.0
+- React v18.2.0
+- react-dom v18.2.0
+- Inertia.js v1.0.0
+- Vite v4.0.4
 
 開発補助として
 
-* Laravel Sail : Docker 開発環境をコマンドで作成可能。
+- Laravel Sail : Docker 開発環境をコマンドで作成可能。
 
 ### Laravel Docker 環境の構築
 
@@ -104,19 +105,15 @@ Inertia を用いて SPA を開発すると、Laravel の Blade を使ってい�
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    @viteReactRefresh
-    @vite('resources/js/app.jsx')
-    @inertia
-</head>
+    @viteReactRefresh @vite('resources/js/app.jsx') @inertia
+  </head>
 
-<body style="margin: 0">
+  <body style="margin: 0">
     @inertia
-</body>
-
+  </body>
 </html>
 ```
 
@@ -379,8 +376,8 @@ API の構築などをせず、Blade テンプレートで実装しているイ�
 
 今回は Inertia の導入のメリットデメリット及び、簡単な導入方法について見てまいりました。
 
-* Laravel, React（など）で SPA 開発をする場合にスピード感を保ちながら開発できる。特に MVP 開発などに良い。
-* フロントエンドとバックエンドが良くも悪くも密結合になるため、大規模になりリポジトリを分ける等の必要性が出てきた場合にハードルがある。
+- Laravel, React（など）で SPA 開発をする場合にスピード感を保ちながら開発できる。特に MVP 開発などに良い。
+- フロントエンドとバックエンドが良くも悪くも密結合になるため、大規模になりリポジトリを分ける等の必要性が出てきた場合にハードルがある。
 
 メリット、デメリットがありましたが、0 → 1 開発フェーズ等スピード感を保ちつつ、SPA 開発をしたい時には力になってくれるライブラリであると思います。
 
